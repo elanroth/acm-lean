@@ -1,0 +1,33 @@
+name = "ACM"
+version = "0.1.0"
+defaultTargets = ["acm", "Test"]
+
+# infinitary-logic now lives in this same repository, as a sibling formal root, so it is
+# required by PATH rather than from git (EXECPLAN §5.3.2 blocker #1, converted in the same
+# commit as the history import). A git require here would fetch a SECOND copy into
+# .lake/packages, leaving the vendored source and the built source free to diverge — and it
+# would keep the build depending on a GitHub repo that D24(c) archives.
+#
+# Semantics are preserved: the old manifest pinned rev c29e5df, and the path now builds
+# against 8eb0356, which is exactly one commit later ("Add Maimonides project descriptor") —
+# metadata only, zero .lean content. Verified by `git log c29e5df..8eb0356`.
+#
+# Side effect: this deletes CI's only reason to hold LAKE_PACKAGES_TOKEN, which existed
+# solely to fetch this private dependency over git.
+[[require]]
+name = "infinitary-logic"
+path = "../infinitary-logic"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+
+[[lean_lib]]
+name = "Lib"
+
+[[lean_lib]]
+name = "Test"
+
+[[lean_exe]]
+name = "acm"
+root = "Main"

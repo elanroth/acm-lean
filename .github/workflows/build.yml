@@ -1,0 +1,28 @@
+name: Build and check axioms
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch Mathlib cache
+        working-directory: acm
+        run: lake exe cache get
+      - name: Build library and regression tests
+        working-directory: acm
+        run: lake build
+      # `lake build` already compiles Test/AxiomGate.lean, whose `#guard_msgs` checks fail the
+      # build if any public theorem depends on `sorryAx` or a non-standard axiom. This step only
+      # prints the axiom lists so they appear in the job log.
+      - name: Print axioms of the public theorems
+        working-directory: acm
+        run: lake env lean Test/AxiomGate.lean

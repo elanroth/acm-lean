@@ -1,0 +1,39 @@
+-- Root of the ACM library.
+-- Scott complexity of countable reduced abelian p-groups.
+
+import Lib.Basic
+import Lib.Logic.BackAndForthCore
+import Lib.PGroups.Basic
+import Lib.PGroups.Subgroups
+import Lib.PGroups.Heights
+import Lib.PGroups.FiniteSocle
+import Lib.PGroups.Socle
+import Lib.PGroups.UlmSubgroups
+import Lib.PGroups.UlmInvariants
+import Lib.PGroups.Morphisms
+import Lib.PGroups.FiniteLength
+import Lib.Ulm.Invariance
+import Lib.Ulm.Pure
+import Lib.Ulm.Extension
+import Lib.Ulm.Classification
+import Lib.Ulm.Theorem
+import Lib.BackForth.JumpSpace
+import Lib.BackForth.RoomTail
+import Lib.BackForth.InducedMap
+import Lib.BackForth.Survival
+import Lib.BackForth.FiniteEmbedding
+import Lib.BackForth.OddFiniteExtension
+import Lib.BackForth.EvenToOdd
+import Lib.BackForth.EvenHighCountdown
+import Lib.BackForth.EvenFiniteExtension
+import Lib.BackForth.LimitRestriction
+import Lib.BackForth.Necessity
+import Lib.BackForth.Characterization
+import Lib.Scott.BarkerDefs
+import Lib.Scott.AlgebraicTail
+import Lib.Scott.Domination
+import Lib.Scott.Tuples
+import Lib.Scott.BackAndForth
+import Lib.Scott.UpperBounds
+import Lib.Scott.LowerBounds
+import Lib.Scott.Classification

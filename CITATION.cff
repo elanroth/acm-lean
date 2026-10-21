@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite it as below."
+title: "Scott Complexity of Reduced Abelian p-Groups: a Lean 4 formalization"
+authors:
+  - family-names: Roth
+    given-names: Elan
+type: software
+date-released: 2026-10-21
+url: "https://github.com/elanroth/acm-lean"
+license: Apache-2.0
+keywords:
+  - Lean 4
+  - Mathlib
+  - abelian p-groups
+  - Ulm's theorem
+  - Scott complexity
+  - back-and-forth

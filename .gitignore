@@ -1,0 +1,8 @@
+# Lean build outputs, at any depth
+.lake/
+# Local secrets and scratch
+.env
+.env.local
+.DS_Store
+__pycache__/
+*.pyc
